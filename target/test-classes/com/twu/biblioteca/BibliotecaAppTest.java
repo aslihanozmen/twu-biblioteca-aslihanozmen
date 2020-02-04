@@ -23,7 +23,7 @@ public class BibliotecaAppTest {
 
 
     @Test
-    public void testWelcomeMessage() {
+    public void shouldPrintWelcomeMessage() {
         Assert.assertThat(outputContent.toString(), containsString("Welcome"));
     }
 }
