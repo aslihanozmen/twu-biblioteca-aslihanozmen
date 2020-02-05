@@ -11,7 +11,7 @@
     <option name="done" value="true" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="249" />
+    <option name="myElementSize" value="273" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -48,9 +48,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/test/com/twu/biblioteca" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -110,21 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BookTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BookTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LibraryFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
@@ -155,13 +140,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LibraryTest.shouldPrintAllBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryTest" />
+      <option name="METHOD_NAME" value="shouldPrintAllBooks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.BibliotecaApp" />
+        <item itemvalue="JUnit.LibraryTest" />
         <item itemvalue="JUnit.LibraryFactoryTest" />
         <item itemvalue="JUnit.BibliotecaAppTest" />
-        <item itemvalue="JUnit.BookTest" />
-        <item itemvalue="JUnit.LibraryTest" />
+        <item itemvalue="JUnit.LibraryTest.shouldPrintAllBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +191,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580850889281</updated>
-      <workItem from="1580850890596" duration="4101000" />
+      <workItem from="1580850890596" duration="5652000" />
     </task>
     <servers />
   </component>
@@ -198,6 +199,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="190" width="935" height="669" key="#Project_Structure" timestamp="1580895884305">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="190" width="935" height="669" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1580895884305" />
     <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1580853905675">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -210,22 +215,22 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="690" y="421" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580851061062" />
-    <state width="1638" height="293" key="GridCell.Tab.0.bottom" timestamp="1580855190148">
+    <state width="1638" height="292" key="GridCell.Tab.0.bottom" timestamp="1580896047313">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="293" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1580855190148" />
-    <state width="1638" height="293" key="GridCell.Tab.0.center" timestamp="1580855190146">
+    <state width="1638" height="292" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047313" />
+    <state width="1638" height="292" key="GridCell.Tab.0.center" timestamp="1580896047311">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="293" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1580855190146" />
-    <state width="1638" height="293" key="GridCell.Tab.0.left" timestamp="1580855190145">
+    <state width="1638" height="292" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047311" />
+    <state width="1638" height="292" key="GridCell.Tab.0.left" timestamp="1580896047310">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="293" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1580855190145" />
-    <state width="1638" height="293" key="GridCell.Tab.0.right" timestamp="1580855190147">
+    <state width="1638" height="292" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047310" />
+    <state width="1638" height="292" key="GridCell.Tab.0.right" timestamp="1580896047312">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="293" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1580855190147" />
+    <state width="1638" height="292" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047312" />
     <state x="328" y="106" key="SettingsEditor" timestamp="1580851112099">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -247,13 +252,13 @@
     <SUITE FILE_PATH="coverage/biblioteca$BookTest.ic" NAME="BookTest Coverage Results" MODIFIED="1580854666564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/biblioteca$BibliotecaAppTest.ic" NAME="BibliotecaAppTest Coverage Results" MODIFIED="1580854684404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/biblioteca$BibliotecaAppTest.ic" NAME="BibliotecaAppTest Coverage Results" MODIFIED="1580895977273" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/biblioteca$LibraryFactoryTest.ic" NAME="LibraryFactoryTest Coverage Results" MODIFIED="1580855190114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/biblioteca$LibraryFactoryTest.ic" NAME="LibraryFactoryTest Coverage Results" MODIFIED="1580896008900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/biblioteca$LibraryTest.ic" NAME="LibraryTest Coverage Results" MODIFIED="1580854637035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/biblioteca$LibraryTest.ic" NAME="LibraryTest Coverage Results" MODIFIED="1580896025694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
     </SUITE>
   </component>

@@ -7,11 +7,11 @@ import static java.util.OptionalDouble.empty;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class LibraryFactoryTest {
+public class BibliotecaLibraryFactoryTest {
 
     @Test
     public void buildLibrary() {
-        Library library = LibraryFactory.buildLibrary();
-        assertThat(library.getBooks(), CoreMatchers.is(not(empty())));
+        BibliotecaLibrary bibliotecaLibrary = LibraryFactory.buildLibrary();
+        assertThat(bibliotecaLibrary.getBooks(), CoreMatchers.is(not(empty())));
     }
 }

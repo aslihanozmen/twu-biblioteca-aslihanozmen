@@ -14,12 +14,11 @@ import static org.hamcrest.core.StringContains.containsString;
 
 public class LibraryTest {
 
-    private Book book;
     private Library library;
 
     @Before
     public void setUp() {
-        book =  new Book(3, "Book3");
+        Book book = new Book(3, "Book3", "authorTest", "1234");
         library = new Library();
         library.addBook(book);
     }
@@ -35,6 +34,9 @@ public class LibraryTest {
         final ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputContent));
         library.printAllBooks();
-        assertThat(outputContent.toString(), containsString("Book3"));
+        assertThat(outputContent.toString(), containsString("Title"));
+        assertThat(outputContent.toString(), containsString("Author"));
+        assertThat(outputContent.toString(), containsString("PublishedYear"));
+        assertThat(outputContent.toString(), containsString(library.getBooks().get(0).getTitle()));
     }
 }

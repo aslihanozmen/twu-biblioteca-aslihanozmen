@@ -4,11 +4,11 @@ public class BibliotecaApp {
 
     public static void main(String[] args) {
 
-        Library library = LibraryFactory.buildLibrary();
+        BibliotecaLibrary bibliotecaLibrary = LibraryFactory.buildLibrary();
 
         System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
         System.out.println("-----------------------------------------------------------------------------");
 
-        library.printAllBooks();
+        bibliotecaLibrary.printAllBooks();
     }
 }
