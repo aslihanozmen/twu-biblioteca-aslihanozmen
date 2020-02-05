@@ -1,14 +1,22 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.commandline.Message;
+import com.twu.biblioteca.factory.MenuFactory;
+
 public class BibliotecaApp {
 
     public static void main(String[] args) {
 
-        BibliotecaLibrary bibliotecaLibrary = LibraryFactory.buildLibrary();
+        BibliotecaApp.start();
 
-        System.out.println("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
-        System.out.println("-----------------------------------------------------------------------------");
-
-        bibliotecaLibrary.printAllBooks();
     }
-}
+
+    private static void start() {
+
+        Message.printMenu(System.out);
+        Menu menu = MenuFactory.buildMenuList();
+        menu.showOptions(System.out);
+        menu.runMenuItem();
+        }
+
+    }

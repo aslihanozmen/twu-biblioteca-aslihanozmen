@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b178fdb7-5d29-4a21-83e9-5dd886b64dcc" name="Default Changelist" comment="" />
+    <list default="true" id="b178fdb7-5d29-4a21-83e9-5dd886b64dcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_stefanbirkner_system_rules_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/01b4ead2aaf0bf9f412f4ab87fa2f35c39be6390" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/d/0d8ba512a892aeb37dd53d9daf5acac50bd54562" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/7/473014a1e5520eb31c2a293da2e926c43788c53c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e2f27933585fd722c91c77ce01fa7f85bf44f01" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/9/69581aab090cd5ed4d6a9d914ad4d421ed28d656" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71b7bbf018d6c08afa327f0d8af81c6bc3eefbc9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/2/721630bdcdeb9d6dd94d23c1ab01a0db04cd4946" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a0ff14c644f081404f4152357e8e3920542a887" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/945b4be898a95deec63b4402aef7f41b38eef36b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e40f80d84a8d1315045e990f7b77296500f09b19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/commandline/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/factory/MenuFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/itemdirectory/BookDirectory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/itemdirectory/ItemDirectory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/itemdirectory/ItemDirectoryBasis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/items/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/items/ItemBasis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/menuselections/MenuItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/menuselections/MenuItemBasis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/menuselections/Selections.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/commandline/MessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/biblioteca.iml" beforeDir="false" afterPath="$PROJECT_DIR$/biblioteca.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/BibliotecaLibrary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/items/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/twu/biblioteca/LibraryFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/twu/biblioteca/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/twu/biblioteca/Library.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/twu/biblioteca/LibraryFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/BibliotecaAppTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/BibliotecaAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/BibliotecaAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/LibraryFactoryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/LibraryFactoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/LibraryTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/twu/biblioteca/LibraryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaLibraryFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaMenuFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaLibraryTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,16 +58,20 @@
     <option name="done" value="true" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="273" />
+    <option name="myElementSize" value="280" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Arquillian JUnit Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -41,12 +92,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/test/com/twu/biblioteca" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/test/com/twu/biblioteca/commandline" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -54,13 +106,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.twu.biblioteca.commandline" />
       <recent name="com.twu.biblioteca" />
+      <recent name="com.twu.biblioteca.input" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BibliotecaApp">
+  <component name="RunManager" selected="JUnit.ScannerWrapperTest">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
       <module name="biblioteca" />
@@ -99,7 +153,7 @@
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.items.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,59 +164,59 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.commandline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryFactoryTest" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.commandline" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.commandline.MessageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MessageTest.shouldPrintMenu" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.commandline.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryTest.shouldPrintAllBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="biblioteca" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.twu.biblioteca" />
-      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.LibraryTest" />
-      <option name="METHOD_NAME" value="shouldPrintAllBooks" />
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.commandline" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.commandline.MessageTest" />
+      <option name="METHOD_NAME" value="shouldPrintMenu" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScannerWrapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="biblioteca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.twu.biblioteca.commandline.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.twu.biblioteca.commandline" />
+      <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.commandline.ScannerWrapperTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ScannerWrapperTest" />
+        <item itemvalue="JUnit.MessageTest" />
+        <item itemvalue="JUnit.MessageTest.shouldPrintMenu" />
         <item itemvalue="Application.BibliotecaApp" />
-        <item itemvalue="JUnit.LibraryTest" />
-        <item itemvalue="JUnit.LibraryFactoryTest" />
         <item itemvalue="JUnit.BibliotecaAppTest" />
-        <item itemvalue="JUnit.LibraryTest.shouldPrintAllBooks" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +245,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1580850889281</updated>
-      <workItem from="1580850890596" duration="5652000" />
+      <workItem from="1580850890596" duration="9996000" />
+      <workItem from="1580904152288" duration="14695000" />
     </task>
     <servers />
   </component>
@@ -199,14 +254,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="190" key="#Plugins" timestamp="1580904059327">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="190" key="#Plugins/0.0.1680.1050@0.0.1680.1050" timestamp="1580904059327" />
     <state x="440" y="190" width="935" height="669" key="#Project_Structure" timestamp="1580895884305">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="190" width="935" height="669" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1580895884305" />
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1580853905675">
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser" timestamp="1580925634903">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1580853905675" />
+    <state x="653" y="248" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1580925634903" />
     <state x="460" y="221" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1580850946297">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -215,40 +274,103 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="690" y="421" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580851061062" />
-    <state width="1638" height="292" key="GridCell.Tab.0.bottom" timestamp="1580896047313">
+    <state x="550" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580925778276">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="292" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047313" />
-    <state width="1638" height="292" key="GridCell.Tab.0.center" timestamp="1580896047311">
+    <state x="550" y="89" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580925778276" />
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580924170651">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="292" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047311" />
-    <state width="1638" height="292" key="GridCell.Tab.0.left" timestamp="1580896047310">
+    <state x="578" y="279" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580924170651" />
+    <state width="482" height="466" key="DebuggerActiveHint" timestamp="1580909457578">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="292" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047310" />
-    <state width="1638" height="292" key="GridCell.Tab.0.right" timestamp="1580896047312">
+    <state width="482" height="466" key="DebuggerActiveHint/0.0.1680.1050@0.0.1680.1050" timestamp="1580909457578" />
+    <state width="1638" height="285" key="GridCell.Tab.0.bottom" timestamp="1580927719236">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="292" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1580896047312" />
+    <state width="1638" height="285" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1580927719236" />
+    <state width="1638" height="285" key="GridCell.Tab.0.center" timestamp="1580927719234">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="285" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1580927719234" />
+    <state width="1638" height="285" key="GridCell.Tab.0.left" timestamp="1580927719232">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="285" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1580927719232" />
+    <state width="1638" height="285" key="GridCell.Tab.0.right" timestamp="1580927719235">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="285" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1580927719235" />
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom" timestamp="1580909488899">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1580909488899" />
+    <state width="1638" height="363" key="GridCell.Tab.1.center" timestamp="1580909488897">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1580909488897" />
+    <state width="1638" height="363" key="GridCell.Tab.1.left" timestamp="1580909488895">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1580909488895" />
+    <state width="1638" height="363" key="GridCell.Tab.1.right" timestamp="1580909488898">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1638" height="363" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1580909488898" />
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog" timestamp="1580908735525">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="378" y="187" key="Maven.ArtifactSearchDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580908735525" />
     <state x="328" y="106" key="SettingsEditor" timestamp="1580851112099">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="328" y="106" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1580851112099" />
-    <state x="635" y="310" key="chooseDestDirectoryDialog" timestamp="1580854835262">
+    <state x="635" y="310" key="chooseDestDirectoryDialog" timestamp="1580907869825">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="635" y="310" key="chooseDestDirectoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580854835262" />
-    <state x="619" y="259" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580854835297">
+    <state x="635" y="310" key="chooseDestDirectoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580907869825" />
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580925258255">
+      <screen x="0" y="23" width="1680" height="957" />
+    </state>
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580924899648" />
+    <state x="100" y="100" width="1480" height="850" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.957@0.23.1680.957" timestamp="1580925258255" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog" timestamp="1580905536226">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="619" y="259" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580854835297" />
+    <state x="519" y="357" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580905536226" />
+    <state x="498" y="147" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580921320907">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="498" y="147" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1580921320907" />
+    <state x="619" y="259" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580907869863">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="619" y="259" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580907869863" />
     <state x="602" y="138" key="refactoring.ChangeSignatureDialog" timestamp="1580854027608">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="602" y="138" key="refactoring.ChangeSignatureDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1580854027608" />
+    <state x="458" y="233" width="764" height="676" key="search.everywhere.popup" timestamp="1580904050563">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="458" y="233" width="764" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1580904050563" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/com/twu/biblioteca/commandline/ScannerWrapperTest.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/biblioteca$MessageTest_shouldPrintMenu.ic" NAME="MessageTest.shouldPrintMenu Coverage Results" MODIFIED="1580927038161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.twu.biblioteca.commandline.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/biblioteca$BookTest.ic" NAME="BookTest Coverage Results" MODIFIED="1580854666564" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
     </SUITE>
@@ -260,6 +382,12 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/biblioteca$LibraryTest.ic" NAME="LibraryTest Coverage Results" MODIFIED="1580896025694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.twu.biblioteca.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/biblioteca$ScannerWrapperTest.ic" NAME="ScannerWrapperTest Coverage Results" MODIFIED="1580927607395" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.twu.biblioteca.commandline.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/biblioteca$MessageTest.ic" NAME="MessageTest Coverage Results" MODIFIED="1580908298478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.twu.biblioteca.commandline.*</FILTER>
     </SUITE>
   </component>
 </project>
