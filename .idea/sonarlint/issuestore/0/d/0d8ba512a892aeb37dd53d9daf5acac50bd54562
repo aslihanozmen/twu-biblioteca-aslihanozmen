@@ -1,14 +1,6 @@
 
-^squid:UselessImportCheck".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8Ä¯ô§.
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ïñãÿÿÿÿÿ8æ˜œ§.
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(Ø¯“¬8æ˜œ§.
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(¿ùşŞ8½±ş§.
+squid:S106"9Replace this use of System.out or System.err by a logger.(·Ñ¾“8¸Í½«.
+Esquid:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8Ùö÷Ó.
 [
-squid:S106"9Replace this use of System.out or System.err by a logger.(óÉèìøÿÿÿÿ8²­ï§.
-U
-squid:S106"9Replace this use of System.out or System.err by a logger.(ò‘¨8æ˜œ§.
-U
-squid:S106"9Replace this use of System.out or System.err by a logger.(Şšñ|8æ˜œ§.
+squid:S106"9Replace this use of System.out or System.err by a logger.(³‰¾äùÿÿÿÿ8Ùö÷Ó.
