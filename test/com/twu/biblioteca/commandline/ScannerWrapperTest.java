@@ -1,7 +1,6 @@
 package com.twu.biblioteca.commandline;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -10,21 +9,18 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class ScannerWrapperTest {
 
-    @Before
-    public void BeforeEach() {
-        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+
+    private void setUp(String input) {
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
     }
 
     @Test
     public void shouldAskUserForInput() {
+        String input = "1";
+        setUp(input);
         ScannerWrapper sw = new ScannerWrapper(System.in, System.out);
-        Assert.assertThat("1", equalTo(sw.askUserForInput("Test")));
+        Assert.assertThat(input, equalTo(sw.askUserForInput("Test")));
     }
 
-    @Test
-    public void shouldGetInput() {
-        ScannerWrapper sw = new ScannerWrapper(System.in, System.out);
-        Assert.assertThat(1, equalTo(sw.getInput(0,2)));
-    }
 }

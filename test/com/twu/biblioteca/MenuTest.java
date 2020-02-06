@@ -23,6 +23,11 @@ public class MenuTest {
     private Menu menu;
     private MenuItem menuItem;
 
+    private void setUp(String input) {
+        ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+    }
+
     @Before
     public void BeforeEach(){
 
@@ -56,5 +61,25 @@ public class MenuTest {
     @Test
     public void shouldGetMenuItemList() {
         assertThat(menu.getMenuItemList(), CoreMatchers.is(not(empty())));
+    }
+
+    @Test
+    public void shouldGetErrMessageIfOptionIsNotInteger() {
+        ByteArrayOutputStream outputContent =  new ByteArrayOutputStream();
+        System.setErr(new PrintStream(outputContent));
+        String input = "test";
+        setUp(input);
+        menu.runMenuItem();
+        Assert.assertThat(outputContent.toString(), containsString("Option should be number!"));
+    }
+
+    @Test
+    public void shouldGetErrMessageIfOptionIsNotValid() {
+        ByteArrayOutputStream outputContent =  new ByteArrayOutputStream();
+        System.setErr(new PrintStream(outputContent));
+        String input = "100";
+        setUp(input);
+        menu.runMenuItem();
+        Assert.assertThat(outputContent.toString(), containsString("Please select a valid option!"));
     }
 }

@@ -12,11 +12,10 @@ public class MessageTest {
 
     @Test
     public void shouldPrintMenu() {
-        String welcomeMessage = "Welcome";
         ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputContent));
         Message.printMenu(System.out);
-        Assert.assertThat(outputContent.toString(), containsString(welcomeMessage));
+        Assert.assertThat(outputContent.toString(), containsString("Welcome"));
     }
 
 }

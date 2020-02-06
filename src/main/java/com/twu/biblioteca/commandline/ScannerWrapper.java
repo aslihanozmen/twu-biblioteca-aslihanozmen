@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class ScannerWrapper {
 
+
     private final Scanner scanner;
     private final PrintStream out;
 
@@ -17,14 +18,5 @@ public class ScannerWrapper {
     public String askUserForInput(String message) {
         out.println(message);
         return scanner.next();
-    }
-
-    public int getInput( int min, int max) {
-        String choice = askUserForInput("Enter Choice: \n");
-        int choiceInt = Integer.parseInt(choice);
-        if ((!choice.matches(".*[a-zA-Z]+.*")) && (choiceInt > min && choiceInt < max)) {
-            return choiceInt;
-        }
-        return 0;
     }
 }
