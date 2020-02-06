@@ -27,8 +27,7 @@ public class Menu {
     }
 
     public void runMenuItem() {
-        ScannerWrapper sw = new ScannerWrapper(System.in, System.out);
-        String choice = sw.askUserForInput(ENTER_OPTION_MESSAGE);
+        String choice = ScannerWrapper.askUserForInput(ENTER_OPTION_MESSAGE);
         int chosen = isValidUserInput(choice);
         if (chosen != -1) {
             menuItemList.forEach(menuItem -> {

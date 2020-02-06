@@ -19,8 +19,7 @@ public class ScannerWrapperTest {
     public void shouldAskUserForInput() {
         String input = "1";
         setUp(input);
-        ScannerWrapper sw = new ScannerWrapper(System.in, System.out);
-        Assert.assertThat(input, equalTo(sw.askUserForInput("Test")));
+        Assert.assertThat(input, equalTo(ScannerWrapper.askUserForInput("Test")));
     }
 
 }

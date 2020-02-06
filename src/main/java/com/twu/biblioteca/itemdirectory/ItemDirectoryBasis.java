@@ -5,7 +5,7 @@ import de.vandermeer.asciitable.AsciiTable;
 
 import java.util.List;
 
-public class ItemDirectoryBasis implements ItemDirectory {
+public abstract class ItemDirectoryBasis implements ItemDirectory {
 
     private List<Item> allItems;
 
@@ -17,8 +17,21 @@ public class ItemDirectoryBasis implements ItemDirectory {
     public void printAllItems() {
         AsciiTable asciiTable = new AsciiTable();
         asciiTable.addRule();
-        allItems.forEach(item -> item.printItem(asciiTable));
+        allItems.forEach(item -> {
+            if(!item.isCheckedOut()) {
+                item.printItem(asciiTable);
+            }
+        });
         String render = asciiTable.render();
         System.out.println(render);
+
+    }
+
+    protected void checkoutItem(Item i) {
+        allItems.forEach(item -> {
+            if(item.isEqualTo(i)) {
+                item.checkOut();
+            }
+        });
     }
 }

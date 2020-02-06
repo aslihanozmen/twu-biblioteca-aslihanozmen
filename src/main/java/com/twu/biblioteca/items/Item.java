@@ -12,4 +12,10 @@ public interface Item {
 
     String getPublishedYear();
 
+    boolean isCheckedOut();
+
+    boolean isEqualTo(Item item);
+
+    void checkOut();
+
 }
