@@ -8,30 +8,30 @@ import org.junit.Test;
 
 import static org.mockito.Mockito.*;
 
-public class SelectionsTest {
+public class PrintSelectionTest {
 
     private BookDirectory bookDirectory;
-    private Selections selections;
+    private PrintSelection printSelection;
 
     @Before
-    public void BeforeEach(){
+    public void BeforeEach() {
         bookDirectory = mock(BookDirectory.class);
-        selections = new Selections(1, "selectionDescTest",bookDirectory);
+        printSelection = new PrintSelection(1, "selectionDescTest", bookDirectory);
     }
 
     @Test
     public void shouldExecuteSelection() {
-        selections.execute();
+        printSelection.execute();
         verify(bookDirectory, times(1)).printAllItems();
     }
 
     @Test
     public void shouldGetDescOfSelection() {
-        Assert.assertThat(selections.getDesc(), CoreMatchers.is("selectionDescTest"));
+        Assert.assertThat(printSelection.getDesc(), CoreMatchers.is("selectionDescTest"));
     }
 
     @Test
     public void shouldGetIdOfSelection() {
-        Assert.assertThat(selections.getId(), CoreMatchers.is(1));
+        Assert.assertThat(printSelection.getId(), CoreMatchers.is(1));
     }
 }

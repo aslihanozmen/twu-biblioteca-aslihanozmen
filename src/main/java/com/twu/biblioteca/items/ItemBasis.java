@@ -33,7 +33,7 @@ public class ItemBasis implements Item {
 
     @Override
     public void printItem(AsciiTable asciiTable) {
-        asciiTable.addRow(title,author,publishedYear);
+        asciiTable.addRow(title, author, publishedYear);
         asciiTable.addRule();
     }
 

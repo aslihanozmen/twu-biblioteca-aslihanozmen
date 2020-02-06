@@ -13,8 +13,12 @@ public class BibliotecaApp {
 
         Message.printMenu(System.out);
         Menu menu = MenuFactory.buildMenuList();
-        menu.showOptions(System.out);
-        menu.runMenuItem();
+
+        while (true) {
+            menu.showOptions(System.out);
+            menu.runMenuItem();
         }
 
     }
+
+}

@@ -14,7 +14,7 @@ public class ItemDirectoryBasis implements ItemDirectory {
     }
 
     @Override
-    public void printAllItems(){
+    public void printAllItems() {
         AsciiTable asciiTable = new AsciiTable();
         asciiTable.addRule();
         allItems.forEach(item -> item.printItem(asciiTable));

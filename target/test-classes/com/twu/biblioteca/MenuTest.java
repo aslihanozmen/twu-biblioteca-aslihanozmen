@@ -1,7 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.menuselections.MenuItem;
-import com.twu.biblioteca.menuselections.Selections;
+import com.twu.biblioteca.menuselections.PrintSelection;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
@@ -31,7 +31,7 @@ public class MenuTest {
     @Before
     public void BeforeEach(){
 
-        menuItem = mock(Selections.class);
+        menuItem = mock(PrintSelection.class);
         when(menuItem.getDesc()).thenReturn("TestDesc");
         when(menuItem.getId()).thenReturn(1);
 
@@ -52,8 +52,7 @@ public class MenuTest {
 
     @Test
     public void shouldRunMenuItem() {
-        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
-        System.setIn(in);
+        setUp(String.valueOf(menuItem.getId()));
         menu.runMenuItem();
         verify(menuItem, times(1)).execute();
     }
