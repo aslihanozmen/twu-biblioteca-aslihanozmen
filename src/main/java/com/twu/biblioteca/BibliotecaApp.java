@@ -6,9 +6,7 @@ import com.twu.biblioteca.factory.MenuFactory;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-
         BibliotecaApp.start();
-
     }
 
     private static void start() {

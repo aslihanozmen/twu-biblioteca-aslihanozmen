@@ -11,9 +11,6 @@ public abstract class MenuItemBasis implements MenuItem {
     }
 
     @Override
-    public abstract void execute();
-
-    @Override
     public String getDesc() {
         return selectionDesc;
     }

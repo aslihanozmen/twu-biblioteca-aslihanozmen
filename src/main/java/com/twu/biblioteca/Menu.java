@@ -4,15 +4,18 @@ import com.twu.biblioteca.commandline.ScannerWrapper;
 import com.twu.biblioteca.menuselections.MenuItem;
 
 import java.io.PrintStream;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
 
-    private List<MenuItem> menuItemList = new ArrayList<>();
+    private List<MenuItem> menuItemList;
 
-    public void setMenuItemList(List<MenuItem> menuItemList) {
+    public Menu(List<MenuItem> menuItemList) {
         this.menuItemList = menuItemList;
+    }
+
+    public List<MenuItem> getMenuItemList() {
+        return menuItemList;
     }
 
     public void showOptions(PrintStream printStream) {

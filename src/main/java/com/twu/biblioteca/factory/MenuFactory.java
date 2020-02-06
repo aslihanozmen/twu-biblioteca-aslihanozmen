@@ -14,9 +14,7 @@ public class MenuFactory {
 
 
     public static Menu buildMenuList() {
-        Menu menu = new Menu();
-        menu.setMenuItemList(populateMenuItems());
-        return menu;
+        return new Menu(populateMenuItems());
     }
 
     private static List<MenuItem> populateMenuItems() {

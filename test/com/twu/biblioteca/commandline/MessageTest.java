@@ -17,7 +17,6 @@ public class MessageTest {
         System.setOut(new PrintStream(outputContent));
         Message.printMenu(System.out);
         Assert.assertThat(outputContent.toString(), containsString(welcomeMessage));
-
     }
 
 }
