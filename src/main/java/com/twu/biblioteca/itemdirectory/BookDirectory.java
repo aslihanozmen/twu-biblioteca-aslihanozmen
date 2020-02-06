@@ -18,6 +18,9 @@ public class BookDirectory extends ItemDirectoryBasis implements ItemDirectory {
         String inputAuthor = ScannerWrapper.askUserForInput("Enter Author: ");
         String inputPublishedYear = ScannerWrapper.askUserForInput("Enter Published Year: ");
         Book book = new Book(inputTitle, inputAuthor, inputPublishedYear);
-        checkoutItem(book);
+        String message = checkoutItem(book);
+        if(message != null) {
+            System.out.println(message);
+        }
     }
 }

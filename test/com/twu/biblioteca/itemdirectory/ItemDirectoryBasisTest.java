@@ -3,7 +3,10 @@ package com.twu.biblioteca.itemdirectory;
 import com.twu.biblioteca.items.Book;
 import com.twu.biblioteca.items.Item;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.SystemOutRule;
+import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -14,12 +17,19 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
+import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
 
 public class ItemDirectoryBasisTest {
 
     private Book book;
     private Book book1;
     private BookDirectory bookDirectory;
+
+    @Rule
+    public final TextFromStandardInputStream textFromStandardInputStream = emptyStandardInputStream();
+
+    @Rule
+    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
 
     @Before
     public void beforeEach() {
@@ -33,12 +43,16 @@ public class ItemDirectoryBasisTest {
 
     @Test
     public void shouldPrintOnlyAvailableBooks() {
-        ByteArrayOutputStream outputContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputContent));
         bookDirectory.printAllItems();
-        assertThat(outputContent.toString(), not(containsString(book.getAuthor())));
-        assertThat(outputContent.toString(), containsString(book1.getAuthor()));
+        assertThat(systemOutRule.getLog(), containsString(book1.getAuthor()));
+        assertThat(systemOutRule.getLog(), not(containsString(book.getAuthor())));
 
+    }
 
+    @Test
+    public void shouldPrintSuccessMessageOfSuccessfulCheckOut() {
+        textFromStandardInputStream.provideLines(book1.getTitle(),book1.getAuthor(),book1.getPublishedYear());
+        bookDirectory.checkOut();
+        assertThat(systemOutRule.getLog(), containsString("Thank you! Enjoy the book"));
     }
 }

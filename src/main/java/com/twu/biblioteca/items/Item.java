@@ -16,6 +16,6 @@ public interface Item {
 
     boolean isEqualTo(Item item);
 
-    void checkOut();
+    String checkOut();
 
 }

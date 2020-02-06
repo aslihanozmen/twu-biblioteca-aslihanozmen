@@ -4,6 +4,7 @@ import com.twu.biblioteca.items.Item;
 import de.vandermeer.asciitable.AsciiTable;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class ItemDirectoryBasis implements ItemDirectory {
 
@@ -27,11 +28,13 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
 
     }
 
-    protected void checkoutItem(Item i) {
+    protected String checkoutItem(Item i) {
+        AtomicReference<String> status = new AtomicReference<>();
         allItems.forEach(item -> {
             if(item.isEqualTo(i)) {
-                item.checkOut();
+                status.set(item.checkOut());
             }
         });
+        return status.get();
     }
 }
