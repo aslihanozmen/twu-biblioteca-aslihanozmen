@@ -8,6 +8,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public abstract class ItemDirectoryBasis implements ItemDirectory {
 
+    private static final String ITEM_NOT_EXIST = "That item does not exist.";
+
     private List<Item> allItems;
 
     public ItemDirectoryBasis(List<Item> allItems) {
@@ -19,7 +21,7 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
         AsciiTable asciiTable = new AsciiTable();
         asciiTable.addRule();
         allItems.forEach(item -> {
-            if(!item.isCheckedOut()) {
+            if (!item.isCheckedOut()) {
                 item.printItem(asciiTable);
             }
         });
@@ -31,10 +33,12 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
     protected String checkoutItem(Item i) {
         AtomicReference<String> status = new AtomicReference<>();
         allItems.forEach(item -> {
-            if(item.isEqualTo(i)) {
+            if (item.isEqualTo(i)) {
                 status.set(item.checkOut());
             }
         });
-        return status.get();
+        String message = status.get();
+        return (message != null) ? message : ITEM_NOT_EXIST;
+
     }
 }

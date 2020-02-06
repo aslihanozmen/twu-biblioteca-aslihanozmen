@@ -38,4 +38,33 @@ public class ItemBasisTest {
         book.printItem(asciiTable);
         assertThat(asciiTable.render(), containsString(book.getAuthor()));
     }
+
+    @Test
+    public void shouldReturnTrueIfBooksAreSame() {
+        Book sameBook = new Book("TitleTest", "AuthorTest", "1234");
+        assertThat(book.isEqualTo(sameBook), is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseIfBooksAreDifferent() {
+        Book sameBook = new Book("TitleTest", "AuthorTest3", "1234");
+        assertThat(book.isEqualTo(sameBook), is(false));
+    }
+
+    @Test
+    public void shouldChangeBookStatusIfIsCheckedOut() {
+        book.checkOut();
+        assertThat(book.isCheckedOut(), is(true));
+    }
+
+    @Test
+    public void shouldPrintSuccessCheckoutMessageIfBookIsSuccessfullyCheckedOut() {
+        assertThat(book.checkOut(), is("Thank you! Enjoy the book"));
+    }
+
+    @Test
+    public void shouldPrintErrorCheckoutMessageIfBookIsAlreadyCheckedOut() {
+        book.checkOut();
+        assertThat(book.checkOut(), is("Sorry, that book is not available"));
+    }
 }

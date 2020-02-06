@@ -8,8 +8,6 @@ import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,5 +52,19 @@ public class ItemDirectoryBasisTest {
         textFromStandardInputStream.provideLines(book1.getTitle(),book1.getAuthor(),book1.getPublishedYear());
         bookDirectory.checkOut();
         assertThat(systemOutRule.getLog(), containsString("Thank you! Enjoy the book"));
+    }
+
+    @Test
+    public void shouldPrintNotAvailableMessageIfBookIsAlreadyCheckedOut() {
+        textFromStandardInputStream.provideLines(book.getTitle(),book.getAuthor(),book.getPublishedYear());
+        bookDirectory.checkOut();
+        assertThat(systemOutRule.getLog(), containsString("Sorry, that book is not available"));
+    }
+
+    @Test
+    public void shouldPrintNotExistMessageIfUserTryToCheckOutNoExistBookInLibrary() {
+        textFromStandardInputStream.provideLines("book.getTitle()","book.getAuthor()","book.getPublishedYear()");
+        bookDirectory.checkOut();
+        assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
     }
 }
