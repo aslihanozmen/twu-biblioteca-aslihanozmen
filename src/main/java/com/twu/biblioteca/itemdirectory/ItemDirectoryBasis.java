@@ -32,12 +32,12 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
 
     protected String checkoutItem(Item i) {
         Optional<Item> checkedOutItem = getItem(i);
-        return (checkedOutItem.isPresent()) ? checkedOutItem.get().checkOut() : ITEM_NOT_EXIST;
+        return checkedOutItem.map(Item::checkOut).orElse(ITEM_NOT_EXIST);
     }
 
     protected String returnItemBack(Item i) {
         Optional<Item> returnedItem = getItem(i);
-        return returnedItem.map(Item::returnBackToLibrary).orElse(null);
+        return returnedItem.map(Item::returnBackToLibrary).orElse(ITEM_NOT_EXIST);
     }
 
     private Optional<Item> getItem(Item i) {

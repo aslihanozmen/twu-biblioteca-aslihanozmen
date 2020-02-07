@@ -76,9 +76,13 @@ public class ItemBasisTest {
     }
 
     @Test
-
     public void shouldPrintSuccessMessageIfValidBookIsReturned() {
         book.checkOut();
         assertThat(book.returnBackToLibrary(), is(containsString("Thank you for returning the book")));
+    }
+
+    @Test
+    public void shouldPrintErrorMessageIfInvalidBookIsReturned() {
+        assertThat(book.returnBackToLibrary(), is(containsString("That is not a valid book to return")));
     }
 }
