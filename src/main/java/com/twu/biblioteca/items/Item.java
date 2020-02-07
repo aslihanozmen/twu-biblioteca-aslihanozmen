@@ -18,6 +18,6 @@ public interface Item {
 
     String checkOut();
 
-    void returnBackToLibrary();
+    String returnBackToLibrary();
 
 }

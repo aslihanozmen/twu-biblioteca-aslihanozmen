@@ -58,10 +58,12 @@ public abstract class ItemBasis implements Item {
         return true;
     }
 
-    protected void changeStatusOfReturnBack() {
+    protected boolean changeStatusOfReturnBack() {
         if (this.status) {
             this.status = false;
+            return true;
         }
+        return false;
     }
 
 

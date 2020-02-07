@@ -59,6 +59,7 @@ public class ItemBasisTest {
 
     @Test
     public void shouldChangeBookStatusIfIsReturned() {
+        book.checkOut();
         book.returnBackToLibrary();
         assertThat(book.isCheckedOut(), is(false));
     }
@@ -72,5 +73,12 @@ public class ItemBasisTest {
     public void shouldPrintErrorCheckoutMessageIfBookIsAlreadyCheckedOut() {
         book.checkOut();
         assertThat(book.checkOut(), is("Sorry, that book is not available"));
+    }
+
+    @Test
+
+    public void shouldPrintSuccessMessageIfValidBookIsReturned() {
+        book.checkOut();
+        assertThat(book.returnBackToLibrary(), is(containsString("Thank you for returning the book")));
     }
 }

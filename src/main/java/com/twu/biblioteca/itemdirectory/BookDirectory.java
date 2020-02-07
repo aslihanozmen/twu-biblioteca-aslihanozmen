@@ -15,16 +15,19 @@ public class BookDirectory extends ItemDirectoryBasis implements ItemDirectory {
     @Override
     public void checkOut() {
         Book book = getBookAsInput();
-        String message = checkoutItem(book);
-        if (message != null) {
-            System.out.println(message);
-        }
+        printMessage(checkoutItem(book));
     }
 
     @Override
     public void returnBack() {
         Book book = getBookAsInput();
-        returnItemBack(book);
+        printMessage(returnItemBack(book));
+    }
+
+    private void printMessage(String message) {
+        if (message != null) {
+            System.out.println(message);
+        }
     }
 
     private Book getBookAsInput() {

@@ -31,17 +31,18 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
     }
 
     protected String checkoutItem(Item i) {
-        Optional<Item> checkedOutItem = allItems.stream()
-                .filter(item -> item.isEqualTo(i))
-                .findFirst();
+        Optional<Item> checkedOutItem = getItem(i);
         return (checkedOutItem.isPresent()) ? checkedOutItem.get().checkOut() : ITEM_NOT_EXIST;
     }
 
-    protected void returnItemBack(Item i) {
-        allItems.forEach(item -> {
-            if (item.isEqualTo(i)) {
-                item.returnBackToLibrary();
-            }
-        });
+    protected String returnItemBack(Item i) {
+        Optional<Item> returnedItem = getItem(i);
+        return returnedItem.map(Item::returnBackToLibrary).orElse(null);
+    }
+
+    private Optional<Item> getItem(Item i) {
+        return allItems.stream()
+                .filter(item -> item.isEqualTo(i))
+                .findFirst();
     }
 }

@@ -75,4 +75,11 @@ public class ItemDirectoryBasisTest {
         bookDirectory.printAllItems();
         assertThat(systemOutRule.getLog(), containsString(book.getAuthor()));
     }
+
+    @Test
+    public void shouldPrintSuccessMessageIfValidBookIsReturned() {
+        textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
+        bookDirectory.returnBack();
+        assertThat(systemOutRule.getLog(), containsString("Thank you for returning the book"));
+    }
 }
