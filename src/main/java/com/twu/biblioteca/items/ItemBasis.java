@@ -2,7 +2,7 @@ package com.twu.biblioteca.items;
 
 import de.vandermeer.asciitable.AsciiTable;
 
-public abstract   class ItemBasis implements Item {
+public abstract class ItemBasis implements Item {
 
     private String title;
 
@@ -51,11 +51,17 @@ public abstract   class ItemBasis implements Item {
     }
 
     protected boolean changeStatusOfCheckOut() {
-        if(this.status) {
+        if (this.status) {
             return false;
         }
         this.status = true;
         return true;
+    }
+
+    protected void changeStatusOfReturnBack() {
+        if (this.status) {
+            this.status = false;
+        }
     }
 
 

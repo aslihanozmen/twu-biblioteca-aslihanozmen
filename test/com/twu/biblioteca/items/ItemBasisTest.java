@@ -58,6 +58,12 @@ public class ItemBasisTest {
     }
 
     @Test
+    public void shouldChangeBookStatusIfIsReturned() {
+        book.returnBackToLibrary();
+        assertThat(book.isCheckedOut(), is(false));
+    }
+
+    @Test
     public void shouldPrintSuccessCheckoutMessageIfBookIsSuccessfullyCheckedOut() {
         assertThat(book.checkOut(), is("Thank you! Enjoy the book"));
     }

@@ -4,10 +4,7 @@ import com.twu.biblioteca.Menu;
 import com.twu.biblioteca.itemdirectory.BookDirectory;
 import com.twu.biblioteca.items.Book;
 import com.twu.biblioteca.items.Item;
-import com.twu.biblioteca.menuselections.CheckOutSelection;
-import com.twu.biblioteca.menuselections.MenuItem;
-import com.twu.biblioteca.menuselections.PrintSelection;
-import com.twu.biblioteca.menuselections.QuitSelection;
+import com.twu.biblioteca.menuselections.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +20,8 @@ public class MenuFactory {
         BookDirectory bookDirectory = new BookDirectory(populateListOfBooks());
         List<MenuItem> menuItemList = new ArrayList<>();
         menuItemList.add(new PrintSelection(1, "Show All Books", bookDirectory));
-        menuItemList.add(new CheckOutSelection(2,"Check out a book", bookDirectory));
+        menuItemList.add(new CheckOutSelection(2, "Check out a book", bookDirectory));
+        menuItemList.add(new ReturnBackSelection(3, "Return a book", bookDirectory));
         menuItemList.add(new QuitSelection(0, "Quit Application"));
         return menuItemList;
     }

@@ -4,7 +4,7 @@ import com.twu.biblioteca.items.Item;
 import de.vandermeer.asciitable.AsciiTable;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.Optional;
 
 public abstract class ItemDirectoryBasis implements ItemDirectory {
 
@@ -31,14 +31,17 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
     }
 
     protected String checkoutItem(Item i) {
-        AtomicReference<String> status = new AtomicReference<>();
+        Optional<Item> checkedOutItem = allItems.stream()
+                .filter(item -> item.isEqualTo(i))
+                .findFirst();
+        return (checkedOutItem.isPresent()) ? checkedOutItem.get().checkOut() : ITEM_NOT_EXIST;
+    }
+
+    protected void returnItemBack(Item i) {
         allItems.forEach(item -> {
             if (item.isEqualTo(i)) {
-                status.set(item.checkOut());
+                item.returnBackToLibrary();
             }
         });
-        String message = status.get();
-        return (message != null) ? message : ITEM_NOT_EXIST;
-
     }
 }

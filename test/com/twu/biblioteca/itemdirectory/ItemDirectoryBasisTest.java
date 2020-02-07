@@ -31,11 +31,11 @@ public class ItemDirectoryBasisTest {
 
     @Before
     public void beforeEach() {
-         book = new Book("Inferno", "Dan Brown", "2013" );
-         book1 = new Book("Harry Potter", "J.K Rowling", "1999" );
-         book.checkOut();
-         List<Item> itemList = new ArrayList<>(Arrays.asList(book,book1));
-         bookDirectory = new BookDirectory(itemList);
+        book = new Book("Inferno", "Dan Brown", "2013");
+        book1 = new Book("Harry Potter", "J.K Rowling", "1999");
+        book.checkOut();
+        List<Item> itemList = new ArrayList<>(Arrays.asList(book, book1));
+        bookDirectory = new BookDirectory(itemList);
 
     }
 
@@ -49,22 +49,30 @@ public class ItemDirectoryBasisTest {
 
     @Test
     public void shouldPrintSuccessMessageOfSuccessfulCheckOut() {
-        textFromStandardInputStream.provideLines(book1.getTitle(),book1.getAuthor(),book1.getPublishedYear());
+        textFromStandardInputStream.provideLines(book1.getTitle(), book1.getAuthor(), book1.getPublishedYear());
         bookDirectory.checkOut();
         assertThat(systemOutRule.getLog(), containsString("Thank you! Enjoy the book"));
     }
 
     @Test
     public void shouldPrintNotAvailableMessageIfBookIsAlreadyCheckedOut() {
-        textFromStandardInputStream.provideLines(book.getTitle(),book.getAuthor(),book.getPublishedYear());
+        textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
         bookDirectory.checkOut();
         assertThat(systemOutRule.getLog(), containsString("Sorry, that book is not available"));
     }
 
     @Test
     public void shouldPrintNotExistMessageIfUserTryToCheckOutNoExistBookInLibrary() {
-        textFromStandardInputStream.provideLines("book.getTitle()","book.getAuthor()","book.getPublishedYear()");
+        textFromStandardInputStream.provideLines("book.getTitle()", "book.getAuthor()", "book.getPublishedYear()");
         bookDirectory.checkOut();
         assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
+    }
+
+    @Test
+    public void shouldReturnItemBack() {
+        textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
+        bookDirectory.returnBack();
+        bookDirectory.printAllItems();
+        assertThat(systemOutRule.getLog(), containsString(book.getAuthor()));
     }
 }

@@ -4,4 +4,6 @@ public interface ItemDirectory {
     void printAllItems();
 
     void checkOut();
+
+    void returnBack();
 }

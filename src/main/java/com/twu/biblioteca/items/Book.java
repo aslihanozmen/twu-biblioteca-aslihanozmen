@@ -13,4 +13,9 @@ public class Book extends ItemBasis implements Item {
     public String checkOut() {
         return changeStatusOfCheckOut() ? CHECKOUT_SUCCESS_MESSAGE : CHECKOUT_ERROR_MESSAGE;
     }
+
+    @Override
+    public void returnBackToLibrary() {
+        changeStatusOfReturnBack();
+    }
 }
