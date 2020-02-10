@@ -8,7 +8,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 
-public class ItemBasisTest {
+public class BookTest {
 
     private Book book;
 
@@ -23,12 +23,12 @@ public class ItemBasisTest {
     }
 
     @Test
-    public void getAuthor() {
+    public void shouldGetAuthor() {
         assertThat(book.getAuthor(), is("AuthorTest"));
     }
 
     @Test
-    public void getPublishedYear() {
+    public void shouldGetPublishedYear() {
         assertThat(book.getPublishedYear(), is("1234"));
     }
 

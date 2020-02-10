@@ -38,8 +38,13 @@ public class MenuFactoryTest {
     }
 
     @Test
-    public void shouldMenuListHasPrintSelection() {
+    public void shouldMenuListHasPrintSelectionForBooks() {
         assertThat(getMenuItem("Show All Books"), CoreMatchers.is(not(empty())));
+    }
+
+    @Test
+    public void shouldMenuListHasPrintSelectionForMovies() {
+        assertThat(getMenuItem("Show All Movies"), CoreMatchers.is(not(empty())));
     }
 
     @Test
