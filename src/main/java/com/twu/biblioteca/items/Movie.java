@@ -4,6 +4,11 @@ import de.vandermeer.asciitable.AsciiTable;
 
 public class Movie extends ItemBasis implements Item {
 
+    private static final String CHECKOUT_SUCCESS_MESSAGE_MOVIE = "Thank you! Enjoy the movie";
+    private static final String CHECKOUT_ERROR_MESSAGE_MOVIE = "Sorry, that movie is not available";
+    private static final String RETURN_SUCCESS_MESSAGE_MOVIE = "Thank you for returning the movie";
+    private static final String RETURN_ERROR_MESSAGE_MOVIE = "That is not a valid movie to return";
+
 
     private String rating;
 
@@ -23,12 +28,12 @@ public class Movie extends ItemBasis implements Item {
 
     @Override
     public String checkOut() {
-        return null;
+        return changeStatusOfCheckOut() ? CHECKOUT_SUCCESS_MESSAGE_MOVIE : CHECKOUT_ERROR_MESSAGE_MOVIE;
     }
 
     @Override
     public String returnBackToLibrary() {
-        return null;
+        return changeStatusOfReturnBack() ? RETURN_SUCCESS_MESSAGE_MOVIE : RETURN_ERROR_MESSAGE_MOVIE;
     }
 
     @Override

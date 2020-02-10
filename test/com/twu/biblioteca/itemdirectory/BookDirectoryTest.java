@@ -17,7 +17,7 @@ import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
 
-public class ItemDirectoryBasisTest {
+public class BookDirectoryTest {
 
     private Book book;
     private Book book1;

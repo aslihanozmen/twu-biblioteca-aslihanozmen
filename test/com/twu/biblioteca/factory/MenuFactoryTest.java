@@ -33,8 +33,13 @@ public class MenuFactoryTest {
 
 
     @Test
-    public void shouldMenuListHasCheckOutSelection() {
+    public void shouldMenuListHasCheckOutSelectionOfBook() {
         assertThat(getMenuItem("Check out a book"), CoreMatchers.is(not(empty())));
+    }
+
+    @Test
+    public void shouldMenuListHasCheckOutSelectionOfMovie() {
+        assertThat(getMenuItem("Check out a movie"), CoreMatchers.is(not(empty())));
     }
 
     @Test

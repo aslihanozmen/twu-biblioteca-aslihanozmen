@@ -45,4 +45,51 @@ public class MovieTest {
         movie.printItem(asciiTable);
         assertThat(asciiTable.render(), containsString(movie.getAuthor()));
     }
+
+    @Test
+    public void shouldChangeBookStatusIfIsCheckedOut() {
+        movie.checkOut();
+        assertThat(movie.isCheckedOut(), is(true));
+    }
+
+    @Test
+    public void shouldReturnTrueIfMoviesAreSame() {
+        Movie sameMovie = new Movie("TitleTest", "DirectorTest", "1234");
+        assertThat(movie.isEqualTo(sameMovie), is(true));
+    }
+
+    @Test
+    public void shouldReturnFalseIfBooksAreDifferent() {
+        Movie differentMovie = new Movie("TitleTest12", "AuthorTest3", "1234");
+        assertThat(movie.isEqualTo(differentMovie), is(false));
+    }
+
+    @Test
+    public void shouldChangeBookStatusIfIsReturned() {
+        movie.checkOut();
+        movie.returnBackToLibrary();
+        assertThat(movie.isCheckedOut(), is(false));
+    }
+
+    @Test
+    public void shouldPrintSuccessCheckoutMessageIfBookIsSuccessfullyCheckedOut() {
+        assertThat(movie.checkOut(), is("Thank you! Enjoy the movie"));
+    }
+
+    @Test
+    public void shouldPrintErrorCheckoutMessageIfBookIsAlreadyCheckedOut() {
+        movie.checkOut();
+        assertThat(movie.checkOut(), is("Sorry, that movie is not available"));
+    }
+
+    @Test
+    public void shouldPrintSuccessMessageIfValidBookIsReturned() {
+        movie.checkOut();
+        assertThat(movie.returnBackToLibrary(), is(containsString("Thank you for returning the movie")));
+    }
+
+    @Test
+    public void shouldPrintErrorMessageIfInvalidBookIsReturned() {
+        assertThat(movie.returnBackToLibrary(), is(containsString("That is not a valid movie to return")));
+    }
 }

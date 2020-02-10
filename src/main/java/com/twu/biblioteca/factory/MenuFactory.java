@@ -26,6 +26,8 @@ public class MenuFactory {
         menuItemList.add(new CheckOutSelection(2, "Check out a book", bookDirectory));
         menuItemList.add(new ReturnBackSelection(3, "Return a book", bookDirectory));
         menuItemList.add(new PrintSelection(4, "Show All Movies", movieDirectory));
+        menuItemList.add(new CheckOutSelection(5, "Checkout a movie", movieDirectory));
+        menuItemList.add(new ReturnBackSelection(6, "Return a movie", movieDirectory));
         menuItemList.add(new QuitSelection(0, "Quit Application"));
         return menuItemList;
     }
@@ -40,8 +42,8 @@ public class MenuFactory {
 
     private static List<Item> populateListOfMovies() {
         List<Item> movies = new ArrayList<>();
-        movies.add(new Movie("Schindler's List ", "Steven Spielberg", "1993","8.9"));
-        movies.add(new Movie("The Dark Knight", "Christopher Nolan", "2008","9"));
+        movies.add(new Movie("Schindler's List ", "Steven Spielberg", "1993", "8.9"));
+        movies.add(new Movie("The Dark Knight", "Christopher Nolan", "2008", "9"));
         movies.add(new Movie("Pulp Fiction", " Quentin Tarantino", "1994"));
         return movies;
     }

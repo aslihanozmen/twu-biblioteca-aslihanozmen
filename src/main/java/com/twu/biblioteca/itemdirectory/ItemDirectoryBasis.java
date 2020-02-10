@@ -45,4 +45,10 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
                 .filter(item -> item.isEqualTo(i))
                 .findFirst();
     }
+
+    protected void printMessage(String message) {
+        if (message != null) {
+            System.out.println(message);
+        }
+    }
 }

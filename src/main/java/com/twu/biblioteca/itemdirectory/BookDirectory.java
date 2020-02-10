@@ -8,32 +8,25 @@ import java.util.List;
 
 public class BookDirectory extends ItemDirectoryBasis implements ItemDirectory {
 
+    private static final String BOOK_TITLE = "Enter book title: ";
+    private static final String BOOK_AUTHOR = "Enter book author: ";
+    private static final String BOOK_PUBLISHED_YEAR = "Enter book published year: ";
+
     public BookDirectory(List<Item> allItems) {
         super(allItems);
     }
 
     @Override
     public void checkOut() {
-        Book book = getBookAsInput();
-        printMessage(checkoutItem(book));
+        printMessage(checkoutItem(getBookAsInput()));
     }
 
     @Override
     public void returnBack() {
-        Book book = getBookAsInput();
-        printMessage(returnItemBack(book));
-    }
-
-    private void printMessage(String message) {
-        if (message != null) {
-            System.out.println(message);
-        }
+        printMessage(returnItemBack(getBookAsInput()));
     }
 
     private Book getBookAsInput() {
-        String inputTitle = ScannerWrapper.askUserForInput("Enter Title: ");
-        String inputAuthor = ScannerWrapper.askUserForInput("Enter Author: ");
-        String inputPublishedYear = ScannerWrapper.askUserForInput("Enter Published Year: ");
-        return new Book(inputTitle, inputAuthor, inputPublishedYear);
+        return new Book(ScannerWrapper.askUserForInput(BOOK_TITLE), ScannerWrapper.askUserForInput(BOOK_AUTHOR), ScannerWrapper.askUserForInput(BOOK_PUBLISHED_YEAR));
     }
 }
