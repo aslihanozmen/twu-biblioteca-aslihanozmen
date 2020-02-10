@@ -1,9 +1,11 @@
 package com.twu.biblioteca.itemdirectory;
 
+import com.twu.biblioteca.user.User;
+
 public interface ItemDirectory {
     void printAllItems();
 
-    void checkOut();
+    void checkOut(User user);
 
-    void returnBack();
+    void returnBack(User user);
 }

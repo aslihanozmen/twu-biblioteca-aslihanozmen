@@ -12,7 +12,9 @@ public class Menu {
     private static final String INVALID_OPTION_MESSAGE = "Please select a valid option!";
     private static final String NUMBER_ERROR_OPTION_MESSAGE = "Option should be number!";
     private static final String ENTER_OPTION_MESSAGE = "Enter choice: \n";
+
     private List<MenuItem> menuItemList;
+
 
     public Menu(List<MenuItem> menuItemList) {
         this.menuItemList = menuItemList;
@@ -28,7 +30,7 @@ public class Menu {
 
     public void runMenuItem() {
         String choice = ScannerWrapper.askUserForInput(ENTER_OPTION_MESSAGE);
-        int chosen = isValidUserInput(choice);
+        int chosen = getValidUserInput(choice);
         if (chosen != -1) {
             menuItemList.forEach(menuItem -> {
                 if (chosen == menuItem.getId()) {
@@ -38,7 +40,7 @@ public class Menu {
         }
     }
 
-    private int isValidUserInput(String input) {
+    private int getValidUserInput(String input) {
         try {
             int inputInt = Integer.parseInt(input);
             if (isValidOption(inputInt)) return inputInt;

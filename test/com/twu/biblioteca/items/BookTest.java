@@ -1,5 +1,6 @@
 package com.twu.biblioteca.items;
 
+import com.twu.biblioteca.user.User;
 import de.vandermeer.asciitable.AsciiTable;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +8,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.mock;
 
 public class BookTest {
 
@@ -53,36 +55,42 @@ public class BookTest {
 
     @Test
     public void shouldChangeBookStatusIfIsCheckedOut() {
-        book.checkOut();
+        User user = mock(User.class);
+        book.checkOut(user);
         assertThat(book.isCheckedOut(), is(true));
     }
 
     @Test
     public void shouldChangeBookStatusIfIsReturned() {
-        book.checkOut();
-        book.returnBackToLibrary();
+        User user = mock(User.class);
+        book.checkOut(user);
+        book.returnBackToLibrary(user);
         assertThat(book.isCheckedOut(), is(false));
     }
 
     @Test
     public void shouldPrintSuccessCheckoutMessageIfBookIsSuccessfullyCheckedOut() {
-        assertThat(book.checkOut(), is("Thank you! Enjoy the book"));
+        User user = mock(User.class);
+        assertThat(book.checkOut(user), is("Thank you! Enjoy the book"));
     }
 
     @Test
     public void shouldPrintErrorCheckoutMessageIfBookIsAlreadyCheckedOut() {
-        book.checkOut();
-        assertThat(book.checkOut(), is("Sorry, that book is not available"));
+        User user = mock(User.class);
+        book.checkOut(user);
+        assertThat(book.checkOut(user), is("Sorry, that book is not available"));
     }
 
     @Test
     public void shouldPrintSuccessMessageIfValidBookIsReturned() {
-        book.checkOut();
-        assertThat(book.returnBackToLibrary(), is(containsString("Thank you for returning the book")));
+        User user = mock(User.class);
+        book.checkOut(user);
+        assertThat(book.returnBackToLibrary(user), is(containsString("Thank you for returning the book")));
     }
 
     @Test
     public void shouldPrintErrorMessageIfInvalidBookIsReturned() {
-        assertThat(book.returnBackToLibrary(), is(containsString("That is not a valid book to return")));
+        User user = mock(User.class);
+        assertThat(book.returnBackToLibrary(user), is(containsString("That is not a valid book to return")));
     }
 }

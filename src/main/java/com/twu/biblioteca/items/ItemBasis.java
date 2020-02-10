@@ -1,5 +1,6 @@
 package com.twu.biblioteca.items;
 
+import com.twu.biblioteca.user.User;
 import de.vandermeer.asciitable.AsciiTable;
 
 public abstract class ItemBasis implements Item {
@@ -9,6 +10,8 @@ public abstract class ItemBasis implements Item {
     private String author;
 
     private String publishedYear;
+
+    private User owner;
 
     private boolean status;
 
@@ -50,16 +53,18 @@ public abstract class ItemBasis implements Item {
         asciiTable.addRule();
     }
 
-    protected boolean changeStatusOfCheckOut() {
+    protected boolean changeStatusOfCheckOut(User user) {
         if (this.status) {
             return false;
         }
+        owner = user;
         this.status = true;
         return true;
     }
 
-    protected boolean changeStatusOfReturnBack() {
-        if (this.status) {
+    protected boolean changeStatusOfReturnBack(User user) {
+        if (this.status && owner.equals(user)) {
+            owner = null;
             this.status = false;
             return true;
         }

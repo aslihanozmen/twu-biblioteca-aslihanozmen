@@ -20,4 +20,5 @@ public abstract class MenuItemBasis implements MenuItem {
     public int getId() {
         return id;
     }
+
 }

@@ -3,6 +3,7 @@ package com.twu.biblioteca.itemdirectory;
 import com.twu.biblioteca.commandline.ScannerWrapper;
 import com.twu.biblioteca.items.Item;
 import com.twu.biblioteca.items.Movie;
+import com.twu.biblioteca.user.User;
 
 import java.util.List;
 
@@ -18,13 +19,13 @@ public class MovieDirectory extends ItemDirectoryBasis implements ItemDirectory 
 
 
     @Override
-    public void checkOut() {
-        printMessage(checkoutItem(getMovieAsInput()));
+    public void checkOut(User user) {
+        printMessage(checkoutItem(getMovieAsInput(), user));
     }
 
     @Override
-    public void returnBack() {
-        printMessage(returnItemBack(getMovieAsInput()));
+    public void returnBack(User user) {
+        printMessage(returnItemBack(getMovieAsInput(), user));
     }
 
     private Movie getMovieAsInput() {

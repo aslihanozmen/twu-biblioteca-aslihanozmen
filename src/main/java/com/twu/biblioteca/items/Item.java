@@ -1,5 +1,6 @@
 package com.twu.biblioteca.items;
 
+import com.twu.biblioteca.user.User;
 import de.vandermeer.asciitable.AsciiTable;
 
 public interface Item {
@@ -16,8 +17,8 @@ public interface Item {
 
     boolean isEqualTo(Item item);
 
-    String checkOut();
+    String checkOut(User user);
 
-    String returnBackToLibrary();
+    String returnBackToLibrary(User user);
 
 }

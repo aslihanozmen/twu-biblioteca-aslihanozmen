@@ -47,7 +47,6 @@ public class MenuTest {
         System.setOut(new PrintStream(outputContent));
         menu.showOptions(System.out);
         Assert.assertThat(outputContent.toString(), containsString("TestDesc"));
-
     }
 
     @Test

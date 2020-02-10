@@ -1,5 +1,7 @@
 package com.twu.biblioteca.items;
 
+import com.twu.biblioteca.user.User;
+
 public class Book extends ItemBasis implements Item {
 
     private static final String CHECKOUT_SUCCESS_MESSAGE = "Thank you! Enjoy the book";
@@ -12,12 +14,12 @@ public class Book extends ItemBasis implements Item {
     }
 
     @Override
-    public String checkOut() {
-        return changeStatusOfCheckOut() ? CHECKOUT_SUCCESS_MESSAGE : CHECKOUT_ERROR_MESSAGE;
+    public String checkOut(User user) {
+        return changeStatusOfCheckOut(user) ? CHECKOUT_SUCCESS_MESSAGE : CHECKOUT_ERROR_MESSAGE;
     }
 
     @Override
-    public String returnBackToLibrary() {
-        return changeStatusOfReturnBack() ? RETURN_SUCCESS_MESSAGE : RETURN_ERROR_MESSAGE;
+    public String returnBackToLibrary(User user) {
+        return changeStatusOfReturnBack(user) ? RETURN_SUCCESS_MESSAGE : RETURN_ERROR_MESSAGE;
     }
 }

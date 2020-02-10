@@ -2,6 +2,7 @@ package com.twu.biblioteca.itemdirectory;
 
 import com.twu.biblioteca.items.Movie;
 import com.twu.biblioteca.items.Item;
+import com.twu.biblioteca.user.User;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,12 +17,14 @@ import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
+import static org.mockito.Mockito.mock;
 
 public class MovieDirectoryTest {
 
     private Movie movie;
     private Movie movie1;
     private MovieDirectory movieDirectory;
+    private User user;
 
     @Rule
     public final TextFromStandardInputStream textFromStandardInputStream = emptyStandardInputStream();
@@ -31,9 +34,10 @@ public class MovieDirectoryTest {
 
     @Before
     public void beforeEach() {
+        user = mock(User.class);
         movie = new Movie("The Dark Knight", "Christoph Nolan", "2008");
         movie1 = new Movie("Shindler's List", "Steven Spielberg", "1993");
-        movie.checkOut();
+        movie.checkOut(user);
         List<Item> itemList = new ArrayList<>(Arrays.asList(movie, movie1));
         movieDirectory = new MovieDirectory(itemList);
 
@@ -50,28 +54,28 @@ public class MovieDirectoryTest {
     @Test
     public void shouldPrintSuccessMessageOfSuccessfulCheckOut() {
         textFromStandardInputStream.provideLines(movie1.getTitle(), movie1.getAuthor(), movie1.getPublishedYear());
-        movieDirectory.checkOut();
+        movieDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("Thank you! Enjoy the movie"));
     }
 
     @Test
     public void shouldPrintNotAvailableMessageIfMovieIsAlreadyCheckedOut() {
         textFromStandardInputStream.provideLines(movie.getTitle(), movie.getAuthor(), movie.getPublishedYear());
-        movieDirectory.checkOut();
+        movieDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("Sorry, that movie is not available"));
     }
 
     @Test
     public void shouldPrintNotExistMessageIfUserTryToCheckOutNoExistMovieInLibrary() {
         textFromStandardInputStream.provideLines("Movie.getTitle()", "Movie.getAuthor()", "Movie.getPublishedYear()");
-        movieDirectory.checkOut();
+        movieDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
     }
 
     @Test
     public void shouldReturnItemBack() {
         textFromStandardInputStream.provideLines(movie.getTitle(), movie.getAuthor(), movie.getPublishedYear());
-        movieDirectory.returnBack();
+        movieDirectory.returnBack(user);
         movieDirectory.printAllItems();
         assertThat(systemOutRule.getLog(), containsString(movie.getAuthor()));
     }
@@ -79,21 +83,21 @@ public class MovieDirectoryTest {
     @Test
     public void shouldPrintSuccessMessageIfValidMovieIsReturned() {
         textFromStandardInputStream.provideLines(movie.getTitle(), movie.getAuthor(), movie.getPublishedYear());
-        movieDirectory.returnBack();
+        movieDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("Thank you for returning the movie"));
     }
 
     @Test
     public void shouldPrintReturnErrorMessageIfMovieWasntCheckedOut() {
         textFromStandardInputStream.provideLines(movie1.getTitle(), movie1.getAuthor(), movie1.getPublishedYear());
-        movieDirectory.returnBack();
+        movieDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("That is not a valid movie to return"));
     }
 
     @Test
     public void shouldPrintNotExistMessageIfUserTryToReturnNoExistMovieInLibrary() {
         textFromStandardInputStream.provideLines("Movie.getTitle()", "Movie.getAuthor()", "Movie.getPublishedYear()");
-        movieDirectory.returnBack();
+        movieDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
     }
 }

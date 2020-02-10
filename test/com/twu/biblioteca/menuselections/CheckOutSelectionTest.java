@@ -1,6 +1,8 @@
 package com.twu.biblioteca.menuselections;
 
 import com.twu.biblioteca.itemdirectory.BookDirectory;
+import com.twu.biblioteca.user.User;
+import com.twu.biblioteca.user.UserAdministration;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,11 +14,13 @@ public class CheckOutSelectionTest {
 
     private CheckOutSelection checkOutSelection;
     private BookDirectory bookDirectory;
+    private UserAdministration userAdministration;
 
     @Before
     public void beforeEach() {
         bookDirectory = mock(BookDirectory.class);
-        checkOutSelection = new CheckOutSelection(2, "testDesc", bookDirectory);
+        userAdministration = mock(UserAdministration.class);
+        checkOutSelection = new CheckOutSelection(2, "testDesc", bookDirectory, userAdministration);
     }
 
     @Test
@@ -26,8 +30,10 @@ public class CheckOutSelectionTest {
 
     @Test
     public void shouldExecuteCheckOutOption() {
+        User user = mock(User.class);
+        when(userAdministration.getPresentUser()).thenReturn(user);
         checkOutSelection.execute();
-        verify(bookDirectory, times(1)).checkOut();
+        verify(bookDirectory, times(1)).checkOut(userAdministration.getPresentUser());
     }
 
     @Test

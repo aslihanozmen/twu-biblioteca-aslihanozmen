@@ -1,5 +1,6 @@
 package com.twu.biblioteca.items;
 
+import com.twu.biblioteca.user.User;
 import de.vandermeer.asciitable.AsciiTable;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,6 +8,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.mock;
 
 public class MovieTest {
 
@@ -23,7 +25,6 @@ public class MovieTest {
     }
 
     @Test
-    //TODO not happy with having author as director, fix it later
     public void shouldGetAuthorAsDirector() {
         assertThat(movie.getAuthor(), is("DirectorTest"));
     }
@@ -48,7 +49,8 @@ public class MovieTest {
 
     @Test
     public void shouldChangeBookStatusIfIsCheckedOut() {
-        movie.checkOut();
+        User user = mock(User.class);
+        movie.checkOut(user);
         assertThat(movie.isCheckedOut(), is(true));
     }
 
@@ -66,30 +68,35 @@ public class MovieTest {
 
     @Test
     public void shouldChangeBookStatusIfIsReturned() {
-        movie.checkOut();
-        movie.returnBackToLibrary();
+        User user = mock(User.class);
+        movie.checkOut(user);
+        movie.returnBackToLibrary(user);
         assertThat(movie.isCheckedOut(), is(false));
     }
 
     @Test
     public void shouldPrintSuccessCheckoutMessageIfBookIsSuccessfullyCheckedOut() {
-        assertThat(movie.checkOut(), is("Thank you! Enjoy the movie"));
+        User user = mock(User.class);
+        assertThat(movie.checkOut(user), is("Thank you! Enjoy the movie"));
     }
 
     @Test
     public void shouldPrintErrorCheckoutMessageIfBookIsAlreadyCheckedOut() {
-        movie.checkOut();
-        assertThat(movie.checkOut(), is("Sorry, that movie is not available"));
+        User user = mock(User.class);
+        movie.checkOut(user);
+        assertThat(movie.checkOut(user), is("Sorry, that movie is not available"));
     }
 
     @Test
     public void shouldPrintSuccessMessageIfValidBookIsReturned() {
-        movie.checkOut();
-        assertThat(movie.returnBackToLibrary(), is(containsString("Thank you for returning the movie")));
+        User user = mock(User.class);
+        movie.checkOut(user);
+        assertThat(movie.returnBackToLibrary(user), is(containsString("Thank you for returning the movie")));
     }
 
     @Test
     public void shouldPrintErrorMessageIfInvalidBookIsReturned() {
-        assertThat(movie.returnBackToLibrary(), is(containsString("That is not a valid movie to return")));
+        User user = mock(User.class);
+        assertThat(movie.returnBackToLibrary(user), is(containsString("That is not a valid movie to return")));
     }
 }

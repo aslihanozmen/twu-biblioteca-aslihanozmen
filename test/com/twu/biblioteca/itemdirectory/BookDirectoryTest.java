@@ -2,6 +2,7 @@ package com.twu.biblioteca.itemdirectory;
 
 import com.twu.biblioteca.items.Book;
 import com.twu.biblioteca.items.Item;
+import com.twu.biblioteca.user.User;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,12 +17,14 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
+import static org.mockito.Mockito.mock;
 
 public class BookDirectoryTest {
 
     private Book book;
     private Book book1;
     private BookDirectory bookDirectory;
+    private User user;
 
     @Rule
     public final TextFromStandardInputStream textFromStandardInputStream = emptyStandardInputStream();
@@ -31,9 +34,10 @@ public class BookDirectoryTest {
 
     @Before
     public void beforeEach() {
+        user = mock(User.class);
         book = new Book("Inferno", "Dan Brown", "2013");
         book1 = new Book("Harry Potter", "J.K Rowling", "1999");
-        book.checkOut();
+        book.checkOut(user);
         List<Item> itemList = new ArrayList<>(Arrays.asList(book, book1));
         bookDirectory = new BookDirectory(itemList);
 
@@ -50,28 +54,28 @@ public class BookDirectoryTest {
     @Test
     public void shouldPrintSuccessMessageOfSuccessfulCheckOut() {
         textFromStandardInputStream.provideLines(book1.getTitle(), book1.getAuthor(), book1.getPublishedYear());
-        bookDirectory.checkOut();
+        bookDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("Thank you! Enjoy the book"));
     }
 
     @Test
     public void shouldPrintNotAvailableMessageIfBookIsAlreadyCheckedOut() {
         textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
-        bookDirectory.checkOut();
+        bookDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("Sorry, that book is not available"));
     }
 
     @Test
     public void shouldPrintNotExistMessageIfUserTryToCheckOutNoExistBookInLibrary() {
         textFromStandardInputStream.provideLines("book.getTitle()", "book.getAuthor()", "book.getPublishedYear()");
-        bookDirectory.checkOut();
+        bookDirectory.checkOut(user);
         assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
     }
 
     @Test
     public void shouldReturnItemBack() {
         textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
-        bookDirectory.returnBack();
+        bookDirectory.returnBack(user);
         bookDirectory.printAllItems();
         assertThat(systemOutRule.getLog(), containsString(book.getAuthor()));
     }
@@ -79,21 +83,21 @@ public class BookDirectoryTest {
     @Test
     public void shouldPrintSuccessMessageIfValidBookIsReturned() {
         textFromStandardInputStream.provideLines(book.getTitle(), book.getAuthor(), book.getPublishedYear());
-        bookDirectory.returnBack();
+        bookDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("Thank you for returning the book"));
     }
 
     @Test
     public void shouldPrintReturnErrorMessageIfBookWasntCheckedOut() {
         textFromStandardInputStream.provideLines(book1.getTitle(), book1.getAuthor(), book1.getPublishedYear());
-        bookDirectory.returnBack();
+        bookDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("That is not a valid book to return"));
     }
 
     @Test
     public void shouldPrintNotExistMessageIfUserTryToReturnNoExistBookInLibrary() {
         textFromStandardInputStream.provideLines("book.getTitle()", "book.getAuthor()", "book.getPublishedYear()");
-        bookDirectory.returnBack();
+        bookDirectory.returnBack(user);
         assertThat(systemOutRule.getLog(), containsString("That item does not exist."));
     }
 }

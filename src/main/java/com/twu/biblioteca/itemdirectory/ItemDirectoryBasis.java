@@ -1,6 +1,7 @@
 package com.twu.biblioteca.itemdirectory;
 
 import com.twu.biblioteca.items.Item;
+import com.twu.biblioteca.user.User;
 import de.vandermeer.asciitable.AsciiTable;
 
 import java.util.List;
@@ -30,14 +31,14 @@ public abstract class ItemDirectoryBasis implements ItemDirectory {
 
     }
 
-    protected String checkoutItem(Item i) {
+    protected String checkoutItem(Item i, User user) {
         Optional<Item> checkedOutItem = getItem(i);
-        return checkedOutItem.map(Item::checkOut).orElse(ITEM_NOT_EXIST);
+        return (checkedOutItem.isPresent()) ? checkedOutItem.get().checkOut(user) : ITEM_NOT_EXIST;
     }
 
-    protected String returnItemBack(Item i) {
+    protected String returnItemBack(Item i, User user) {
         Optional<Item> returnedItem = getItem(i);
-        return returnedItem.map(Item::returnBackToLibrary).orElse(ITEM_NOT_EXIST);
+        return (returnedItem.isPresent()) ? returnedItem.get().returnBackToLibrary(user) : ITEM_NOT_EXIST;
     }
 
     private Optional<Item> getItem(Item i) {

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.menuselections;
 
 import com.twu.biblioteca.itemdirectory.BookDirectory;
+import com.twu.biblioteca.user.UserAdministration;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,6 +15,7 @@ public class ReturnBackSelectionTest {
 
     private ReturnBackSelection returnBackSelection;
     private BookDirectory bookDirectory;
+    private UserAdministration userAdministration;
 
 
     @Rule
@@ -22,13 +24,14 @@ public class ReturnBackSelectionTest {
     @Before
     public void beforeEach() {
         bookDirectory = mock(BookDirectory.class);
-        returnBackSelection = new ReturnBackSelection(3, "Return a book", bookDirectory);
+        userAdministration = mock(UserAdministration.class);
+        returnBackSelection = new ReturnBackSelection(3, "Return a book", bookDirectory, userAdministration);
     }
 
     @Test
     public void shouldExecuteReturnBackOption() {
         returnBackSelection.execute();
-        verify(bookDirectory, times(1)).returnBack();
+        verify(bookDirectory, times(1)).returnBack(userAdministration.getPresentUser());
     }
 
     @Test

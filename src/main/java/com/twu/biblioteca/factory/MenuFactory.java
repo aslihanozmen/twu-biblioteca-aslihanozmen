@@ -7,6 +7,8 @@ import com.twu.biblioteca.items.Book;
 import com.twu.biblioteca.items.Item;
 import com.twu.biblioteca.items.Movie;
 import com.twu.biblioteca.menuselections.*;
+import com.twu.biblioteca.user.User;
+import com.twu.biblioteca.user.UserAdministration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,16 +21,20 @@ public class MenuFactory {
     }
 
     private static List<MenuItem> populateMenuItems() {
+        UserAdministration userAdministration = new UserAdministration(populateListOfUsers());
         BookDirectory bookDirectory = new BookDirectory(populateListOfBooks());
         MovieDirectory movieDirectory = new MovieDirectory(populateListOfMovies());
+
         List<MenuItem> menuItemList = new ArrayList<>();
         menuItemList.add(new PrintSelection(1, "Show All Books", bookDirectory));
-        menuItemList.add(new CheckOutSelection(2, "Check out a book", bookDirectory));
-        menuItemList.add(new ReturnBackSelection(3, "Return a book", bookDirectory));
+        menuItemList.add(new CheckOutSelection(2, "Check out a book", bookDirectory, userAdministration));
+        menuItemList.add(new ReturnBackSelection(3, "Return a book", bookDirectory, userAdministration));
         menuItemList.add(new PrintSelection(4, "Show All Movies", movieDirectory));
-        menuItemList.add(new CheckOutSelection(5, "Checkout a movie", movieDirectory));
-        menuItemList.add(new ReturnBackSelection(6, "Return a movie", movieDirectory));
+        menuItemList.add(new CheckOutSelection(5, "Checkout a movie", movieDirectory, userAdministration));
+        menuItemList.add(new ReturnBackSelection(6, "Return a movie", movieDirectory, userAdministration));
+        menuItemList.add(new LogoutSelection(7, "Log Out", userAdministration));
         menuItemList.add(new QuitSelection(0, "Quit Application"));
+
         return menuItemList;
     }
 
@@ -46,5 +52,13 @@ public class MenuFactory {
         movies.add(new Movie("The Dark Knight", "Christopher Nolan", "2008", "9"));
         movies.add(new Movie("Pulp Fiction", " Quentin Tarantino", "1994"));
         return movies;
+    }
+
+    private static List<User> populateListOfUsers() {
+        List<User> users = new ArrayList<>();
+        users.add(new User("111-1111", "psswd1"));
+        users.add(new User("222-2222", "psswd2"));
+        users.add(new User("333-3333", "psswd3"));
+        return users;
     }
 }
