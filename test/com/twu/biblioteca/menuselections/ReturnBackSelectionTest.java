@@ -1,6 +1,7 @@
 package com.twu.biblioteca.menuselections;
 
 import com.twu.biblioteca.itemdirectory.BookDirectory;
+import com.twu.biblioteca.user.User;
 import com.twu.biblioteca.user.UserAdministration;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
@@ -30,8 +31,10 @@ public class ReturnBackSelectionTest {
 
     @Test
     public void shouldExecuteReturnBackOption() {
+        User user = mock(User.class);
+        when(userAdministration.getUserIfAuthorized()).thenReturn(user);
         returnBackSelection.execute();
-        verify(bookDirectory, times(1)).returnBack(userAdministration.getPresentUser());
+        verify(bookDirectory, times(1)).returnBack(user);
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.twu.biblioteca.menuselections;
 
 import com.twu.biblioteca.itemdirectory.ItemDirectory;
+import com.twu.biblioteca.user.User;
 import com.twu.biblioteca.user.UserAdministration;
 
 public class ReturnBackSelection extends MenuItemBasis implements MenuItem {
@@ -16,10 +17,10 @@ public class ReturnBackSelection extends MenuItemBasis implements MenuItem {
 
     @Override
     public void execute() {
-        if (!userAdministration.isUserLoggedIn()) {
-            userAdministration.authorizeUser();
+        User user = userAdministration.getUserIfAuthorized();
+        if (user != null) {
+            itemDirectory.returnBack(user);
         }
-        itemDirectory.returnBack(userAdministration.getPresentUser());
     }
 
 }

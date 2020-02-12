@@ -16,11 +16,11 @@ import static org.hamcrest.core.IsNull.nullValue;
 import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.*;
 import static org.junit.contrib.java.lang.system.TextFromStandardInputStream.emptyStandardInputStream;
+import static org.mockito.Mockito.*;
 
 public class UserAdministrationTest {
 
     private User user;
-    private User user1;
     private UserAdministration userAdministration;
 
     @Rule
@@ -34,8 +34,9 @@ public class UserAdministrationTest {
 
     @Before
     public void beforeEach() {
-        user = new User("123-4567", "password");
-        user1 = new User("890-1234", "test");
+        UserInfo userInfo = mock(UserInfo.class);
+        user = new User("123-4567", "password", userInfo);
+        User user1 = new User("890-1234", "test", userInfo);
         List<User> users = new ArrayList<>(Arrays.asList(user, user1));
         userAdministration = new UserAdministration(users);
     }
@@ -99,6 +100,13 @@ public class UserAdministrationTest {
     public void shouldPrintErrorMessageIfUsersLogOutIsNotSuccessful() {
         userAdministration.logoutUser();
         assertThat(systemOutRule.getLog(), containsString("You are not logged in."));
+    }
+
+    @Test
+    public void shouldGetAuthorizedUserIfUserIsLoggedIn() {
+        textFromStandardInputStream.provideLines("123-4567", "password");
+        User authorizedUser = userAdministration.getUserIfAuthorized();
+        assertThat(authorizedUser, is(user));
     }
 
 }

@@ -31,9 +31,9 @@ public class CheckOutSelectionTest {
     @Test
     public void shouldExecuteCheckOutOption() {
         User user = mock(User.class);
-        when(userAdministration.getPresentUser()).thenReturn(user);
+        when(userAdministration.getUserIfAuthorized()).thenReturn(user);
         checkOutSelection.execute();
-        verify(bookDirectory, times(1)).checkOut(userAdministration.getPresentUser());
+        verify(bookDirectory, times(1)).checkOut(user);
     }
 
     @Test

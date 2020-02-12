@@ -2,6 +2,7 @@ package com.twu.biblioteca.user;
 
 import com.twu.biblioteca.commandline.ScannerWrapper;
 
+import java.io.PrintStream;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,7 @@ public class UserAdministration {
     public void authorizeUser() {
 
         if (isUserLoggedIn()) {
-            System.out.println(AUTHORIZED_MESSAGE);
+            printOut().println(AUTHORIZED_MESSAGE);
             return;
         }
         presentUser = getUser(ScannerWrapper.askUserForInput(LIBRARY_NUMBER_MESSAGE), ScannerWrapper.askUserForInput(PSSWD_MESSAGE));
@@ -41,11 +42,19 @@ public class UserAdministration {
     }
 
     private void printAuthorizationMessage() {
-        if ((!isUserLoggedIn())) {
-            System.err.println(NOT_AUTHORIZED_MESSAGE);
+        if (isUserLoggedIn()) {
+            printOut().println(SUCCESS_AUTHORIZED_MESSAGE);
         } else {
-            System.out.println(SUCCESS_AUTHORIZED_MESSAGE);
+            printErr().println(NOT_AUTHORIZED_MESSAGE);
         }
+    }
+
+    private PrintStream printErr() {
+        return System.err;
+    }
+
+    private PrintStream printOut() {
+        return System.out;
     }
 
     private User getUser(String libNu, String psswd) {
@@ -63,10 +72,15 @@ public class UserAdministration {
 
     public void logoutUser() {
         if (!isUserLoggedIn()) {
-            System.out.println(NO_LOG_IN_MSG);
+            printOut().println(NO_LOG_IN_MSG);
             return;
         }
         presentUser = null;
-        System.out.println(SUCCESS_LOG_OUT_MSG);
+        printOut().println(SUCCESS_LOG_OUT_MSG);
+    }
+
+    public User getUserIfAuthorized() {
+        authorizeUser();
+        return getPresentUser();
     }
 }
